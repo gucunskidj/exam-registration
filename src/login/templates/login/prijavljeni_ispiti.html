@@ -1,0 +1,84 @@
+{% extends 'login/base.html' %}
+
+{% block content %}
+
+<style>
+
+    .table tbody tr:hover td, .table tbody tr:hover th {
+        background-color: lightblue;
+    }
+
+    h2 {
+        text-align: center;
+        display: block;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    #prikazi {
+        text-align: center;
+        font-size: 1.17em;
+        font-weight: bold;
+    }
+
+</style>
+
+{% csrf_token %}
+
+<div class="starter-template">
+    <h2>Uspešno ste prijavili sledeće ispite:</h2>
+</div>
+
+<div id="prikazi">
+    
+</div>
+
+
+<!-- <form action="" method="POST" >
+    <div class="wrapper">
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+                <th scope="col">R. br.</th>
+                <th scope="col">Predmet</th>
+                <th scope="col">Datum ispita</th>
+                <th scope="col">Profesor</th>
+                <th scope="col">Semestar</th>
+                <th scope="col">ESPB</th>
+                <th scope="col">Vrsta predmeta</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for i in predmeti %}
+                    {% for cb in checkboxes %}
+                        {% if cb.i.naziv_predmeta == i.naziv_predmeta %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ i.naziv_predmeta }}</td>
+                                <td>{{ i.datum_ispita }}</td>
+                                <td>{{ i.profesor }}</td>
+                                <td>{{ i.semestar }}</td>
+                                <td>{{ i.espb_bodova }}</td>
+                                <td>{{ i.vrsta_predmeta }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</form> -->
+
+
+<script>
+
+    document.getElementById('prikazi').innerHTML = JSON.parse(localStorage.getItem('checkedCheckboxes'));	
+
+</script>
+
+
+{% endblock %}
