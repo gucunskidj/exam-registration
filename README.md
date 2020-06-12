@@ -2,6 +2,12 @@
 
 Web application for student exam registration is built with django web framework.
 
+Web application have database for students, subjects, faculty departments and professors.
+
+Each student has their own profile with their own subjects.
+
+
+
 
 
 
@@ -17,3 +23,4 @@ Web application for student exam registration is built with django web framework
 ![](images/04%20potvrda%20prijave%20ispita.png)
 
 ![](images/05%20prijavljeni%20ispiti.png)
+
